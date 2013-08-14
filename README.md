@@ -16,8 +16,8 @@ navi.route('/posts/:id').enter(function(params, next){
 
 ## Download
 
-- **Development:** [navi.js](https://github.com/tommy351/navi/raw/master/lib/navi.js) - 5.12KB uncompressed
-- **Production:** [navi.min.js](https://github.com/tommy351/navi/raw/master/lib/navi.min.js) - 1.03KB minified and gzipped
+- **Development:** [navi.js](https://github.com/tommy351/navi/raw/master/lib/navi.js) - 5.2KB uncompressed
+- **Production:** [navi.min.js](https://github.com/tommy351/navi/raw/master/lib/navi.min.js) - 1.05KB minified and gzipped
 
 ## Documentation
 
@@ -103,3 +103,15 @@ Adds the `fn` to the enter stack.
 #### route.exit(fn)
 
 Adds the `fn` to the exit stack.
+
+## License
+
+(The MIT License)
+
+Copyright (c) 2013 Tommy Chen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
