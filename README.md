@@ -39,7 +39,7 @@ Creates a route. The `path` argument can be a routing string or regular expressi
 
 ``` js
 // Matches /posts/25
-navi.route('/posts/:id/);
+navi.route('/posts/:id/');
 
 // Matches /assets/img/cat.jpg
 navi.route('/assets/*path');
