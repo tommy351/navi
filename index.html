@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Navi by tommy351</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Navi</h1>
+        <p>A simple client-side routing library.</p>
+
+        <p class="view"><a href="https://github.com/tommy351/navi">View the Project on GitHub <small>tommy351/navi</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tommy351/navi/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tommy351/navi/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tommy351/navi">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="navi" class="anchor" href="#navi"><span class="octicon octicon-link"></span></a>Navi</h1>
+
+<p>Navi is a simple client-side routing library.</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<div class="highlight"><pre><span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">'/posts/:id'</span><span class="p">).</span><span class="nx">enter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'enter: '</span> <span class="o">+</span> <span class="nx">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">next</span><span class="p">();</span>
+<span class="p">)).</span><span class="nx">exit</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'exit: '</span> <span class="o">+</span> <span class="nx">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">next</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<ul>
+<li>
+<strong>Development:</strong> <a href="https://github.com/tommy351/navi/raw/master/lib/navi.js">navi.js</a> - 5.2KB uncompressed</li>
+<li>
+<strong>Production:</strong> <a href="https://github.com/tommy351/navi/raw/master/lib/navi.min.js">navi.min.js</a> - 1.05KB minified and gzipped</li>
+</ul><h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<p><strong>Default options:</strong></p>
+
+<div class="highlight"><pre><span class="nx">navi</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">html5</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>
+<code>html5</code>: Uses HTML5 PushState.</li>
+</ul><h3>
+<a name="routepath-fn" class="anchor" href="#routepath-fn"><span class="octicon octicon-link"></span></a>route(path, [fn])</h3>
+
+<p>Creates a route. The <code>path</code> argument can be a routing string or regular expression. If the <code>fn</code> argument is provided, it'll be the first enter function.</p>
+
+<div class="highlight"><pre><span class="c1">// Matches /posts/25</span>
+<span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">'/posts/:id/'</span><span class="p">);</span>
+
+<span class="c1">// Matches /assets/img/cat.jpg</span>
+<span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">'/assets/*path'</span><span class="p">);</span>
+
+<span class="c1">// Matches /zh-tw/landing</span>
+<span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="sr">/^\/(.*?)\/landing$/</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="navigatepath-options" class="anchor" href="#navigatepath-options"><span class="octicon octicon-link"></span></a>navigate(path, [options])</h3>
+
+<p>Redirects to the given <code>path</code>.</p>
+
+<p><strong>Options:</strong></p>
+
+<ul>
+<li>
+<code>replace</code> - Replaces the current state.</li>
+</ul><h3>
+<a name="forwardnum" class="anchor" href="#forwardnum"><span class="octicon octicon-link"></span></a>forward([num])</h3>
+
+<p>Goes to the next page.</p>
+
+<p><strong>Alias</strong>: <em>go</em></p>
+
+<h3>
+<a name="backnum" class="anchor" href="#backnum"><span class="octicon octicon-link"></span></a>back([num])</h3>
+
+<p>Goes to the previous page.</p>
+
+<h3>
+<a name="matchurl" class="anchor" href="#matchurl"><span class="octicon octicon-link"></span></a>match(url)</h3>
+
+<p>Checks whether the <code>url</code> is matched with the registered routes.</p>
+
+<h3>
+<a name="class-route" class="anchor" href="#class-route"><span class="octicon octicon-link"></span></a>Class: Route</h3>
+
+<p>When users entering an URL, Navi'll trigger the matching route's enter stacks and so as exiting.</p>
+
+<p>Each function in the stack is invoked with 2 parameters: <code>(params, next)</code>. The <code>params</code> includes properties mapped to the route.</p>
+
+<div class="highlight"><pre><span class="c1">// Enters /posts/25</span>
+<span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">'/posts/:id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+    <span class="c1">// =&gt; "25"</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>The functions in the stack are executed in series. The next function won't be executed unless the previous function called <code>next()</code>.</p>
+
+<div class="highlight"><pre><span class="nx">navi</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">'/posts/:id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="nx">next</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">enter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="c1">// This function will be executed</span>
+<span class="p">}).</span><span class="nx">enter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+    <span class="c1">// This function won't be executed</span>
+<span class="p">});</span>
+</pre></div>
+
+<h4>
+<a name="routeenterfn" class="anchor" href="#routeenterfn"><span class="octicon octicon-link"></span></a>route.enter(fn)</h4>
+
+<p>Adds the <code>fn</code> to the enter stack.</p>
+
+<h4>
+<a name="routeexitfn" class="anchor" href="#routeexitfn"><span class="octicon octicon-link"></span></a>route.exit(fn)</h4>
+
+<p>Adds the <code>fn</code> to the exit stack.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2013 Tommy Chen</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tommy351">tommy351</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
