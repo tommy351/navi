@@ -16,8 +16,8 @@ navi.route('/posts/:id').enter(function(params, next){
 
 ## Download
 
-- **Development:** [navi.js](https://github.com/tommy351/navi/raw/master/lib/navi.js) - 5.07KB uncompressed
-- **Production:** [navi.min.js](https://github.com/tommy351/navi/raw/master/lib/navi.min.js) - 1.05KB minified and gzipped
+- **Development:** [navi.js](https://github.com/tommy351/navi/raw/master/lib/navi.js) - 5.12KB uncompressed
+- **Production:** [navi.min.js](https://github.com/tommy351/navi/raw/master/lib/navi.min.js) - 1.03KB minified and gzipped
 
 ## Documentation
 
@@ -66,9 +66,9 @@ Goes to the next page.
 
 Goes to the previous page.
 
-### match(pattern, url)
+### match(url)
 
-Checks whether the `url` is matched with the `pattern` or not. The `pattern` argument can be a routing string or regular expression.
+Checks whether the `url` is matched with the registered routes.
 
 ### Class: Route
 
